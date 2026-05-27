@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+gem 'jekyll-sass-converter', '~> 2.2'
+group :jekyll_plugins do
+    gem 'jekyll'
+    gem 'jekyll-archives'
+    gem 'jekyll-email-protect'
+    gem 'jekyll-feed'
+    gem 'jekyll-paginate-v2'
+    gem 'jekyll-scholar'
+    gem 'jekyll-sitemap'
+    gem 'jekyll-target-blank'
+    gem 'jemoji'
+    gem 'unicode_utils'
+    gem 'webrick'
+end
