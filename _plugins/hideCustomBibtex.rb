@@ -1,13 +1,12 @@
- module Jekyll
+module Jekyll
   module HideCustomBibtex
     def hideCustomBibtex(input)
-	  keywords = @context.registers[:site].config['filtered_bibtex_keywords']
+      keywords = Array(@context.registers[:site].config['filtered_bibtex_keywords'])
+      return input if keywords.empty?
 
-	  keywords.each do |keyword|
-		input = input.gsub(/^.*#{keyword}.*$\n/, '')
-	  end
-
-      return input
+      pattern = /^\s*(?:#{keywords.map { |k| Regexp.escape(k) }.join('|')})\s*=.*\n?/i
+      cleaned = input.gsub(pattern, '')
+      cleaned.gsub(/,\n\}/m, "\n}")
     end
   end
 end

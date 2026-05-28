@@ -1,5 +1,3 @@
-% Publications for Ali Caglayan. Grouped on the site by the custom pubtype field.
-
 @article{caglayan2026jstars,
 	title     = {SAR-W-MixMAE: Polarization-Aware Self-Supervised Pretraining for Masked Autoencoders on SAR Data},
 	author    = {Caglayan, Ali and Imamoglu, Nevrez and Kouyama, Toru},
@@ -9,7 +7,11 @@
 	year      = {2026},
 	publisher = {IEEE},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={jstars-2026.png},
+	html={https://ieeexplore.ieee.org/document/11344788},
+	code={https://github.com/acaglayan/SAR-W-MixMAE},
+	abstract={Self-supervised pretraining has emerged as a powerful approach for learning transferable representations from large-scale unlabeled data, significantly reducing reliance on taskspecific labeled datasets. Although masked autoencoders (MAEs) have shown considerable success in optical remote sensing, such as RGB and multispectral imagery, their application to synthetic aperture radar (SAR) data remains underexplored due to its unique imaging characteristics, including speckle content and intensity variability. In this work, we investigate the effectiveness of masked autoencoders for SAR pretraining, specifically applying MixMAE [1] to Sentinel-1 SAR imagery. We introduce SARW- MixMAE, a domain-aware self-supervised learning approach that incorporates a SAR-specific pixel-wise weighting strategy into the reconstruction loss, mitigating the effects of speckle content and high-intensity backscatter variations. Experimental results demonstrate that SAR-W-MixMAE consistently improves baseline models in multilabel SAR image classification and flood detection tasks, extending the state-of-the-art performance on the popular BigEarthNet dataset. Extensive ablation studies reveal that pretraining duration and fine-tuning dataset size significantly impact downstream performance. In particular, early stopping during pretraining can yield optimal downstream task accuracy, challenging the assumption that prolonged pretraining enhances results. These insights contribute to the development of foundation models tailored for SAR imagery and provide practical guidelines for optimizing pretraining strategies in remote sensing applications.}
 }
 
 @article{ding2024attention,
@@ -22,7 +24,11 @@
 	year={2024},
 	publisher={Springer},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={mm-2024.png},
+	html={https://doi.org/10.1007/s00530-024-01389-7},
+	code={https://github.com/nevrez/SalLONet},
+	abstract={LiDAR odometry estimation and 3D semantic segmentation are crucial for autonomous driving, which has achieved remarkable advances recently. However, these tasks are challenging due to the imbalance of points in different semantic categories for 3D semantic segmentation and the influence of dynamic objects for LiDAR odometry estimation, which increases the importance of using representative/salient landmarks as reference points for robust feature learning. To address these challenges, we propose a saliency-guided approach that leverages attention information to improve the performance of LiDAR odometry estimation and semantic segmentation models. Unlike in the image domain, only a few studies have addressed point cloud saliency information due to the lack of annotated training data. To alleviate this, we first present a universal framework to transfer saliency distribution knowledge from color images to point clouds, and use this to construct a pseudo-saliency dataset (i.e. FordSaliency) for point clouds. Then, we adopt point cloud based backbones to learn saliency distribution from pseudo-saliency labels, which is followed by our proposed SalLiDAR module. SalLiDAR is a saliency-guided 3D semantic segmentation model that integrates saliency information to improve segmentation performance. Finally, we introduce SalLONet, a self-supervised saliency-guided LiDAR odometry network that uses the semantic and saliency predictions of SalLiDAR to achieve better odometry estimation. Our extensive experiments on benchmark datasets demonstrate that the proposed SalLiDAR and SalLONet models achieve state-of-the-art performance against existing methods, highlighting the effectiveness of image-to-LiDAR saliency knowledge transfer.}
 }
 
 @article{2022_CVIU_CNNrandRNN,
@@ -35,7 +41,11 @@
 	keywords={selected},
 	year={2022},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={cviu-2022.png},
+	html={https://doi.org/10.1016/j.cviu.2022.103373},
+	code={https://github.com/acaglayan/CNN_randRNN},
+	abstract={Recognizing objects and scenes are two challenging but essential tasks in image understanding. In particular, the use of RGB-D sensors in handling these tasks has emerged as an important area of focus for better visual understanding. Meanwhile, deep neural networks, specifically convolutional neural networks (CNNs), have become widespread and have been applied to many visual tasks by replacing hand-crafted features with effective deep features. However, it is an open problem how to exploit deep features from a multi-layer CNN model effectively. In this paper, we propose a novel two-stage framework that extracts discriminative feature representations from multi-modal RGB-D images for object and scene recognition tasks. In the first stage, a pretrained CNN model has been employed as a backbone to extract visual features at multiple levels. The second stage maps these features into high level representations with a fully randomized structure of recursive neural networks (RNNs) efficiently. To cope with the high dimensionality of CNN activations, a random weighted pooling scheme has been proposed by extending the idea of randomness in RNNs. Multi-modal fusion has been performed through a soft voting approach by computing weights based on individual recognition confidences (i.e. SVM scores) of RGB and depth streams separately. This produces consistent class label estimation in final RGB-D classification performance. Extensive experiments verify that fully randomized structure in RNN stage encodes CNN activations to discriminative solid features successfully. Comparative experimental results on the popular Washington RGB-D Object and SUN RGB-D Scene datasets show that the proposed approach achieves superior or on-par performance compared to state-of-the-art methods both in object and scene recognition tasks.},
 }
 
 @article{2022_IMAVIS_Dinq,
@@ -48,7 +58,11 @@
 	keywords={selected},
 	author = {Guanqun Ding and Nevrez Imamoglu and Ali Caglayan and Masahiro Murakawa and Ryosuke Nakamura},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={salfbnet-2022.png},
+	html={https://doi.org/10.1016/j.imavis.2022.104395},
+	code={https://github.com/gqding/SalFBNet},
+	abstract={Feed-forward only convolutional neural networks (CNNs) may ignore intrinsic relationships and potential benefits of feedback connections in vision tasks such as saliency detection, despite their significant representation capabilities. In this work, we propose a feedback-recursive convolutional framework (SalFBNet) for saliency detection. The proposed feedback model can learn abundant contextual representations by bridging a recursive pathway from higher-level feature blocks to low-level layer. Moreover, we create a large-scale Pseudo-Saliency dataset to alleviate the problem of data deficiency in saliency detection. We first use the proposed feedback model to learn saliency distribution from pseudo-ground-truth. Afterwards, we fine-tune the feedback model on existing eye-fixation datasets. Furthermore, we present a novel Selective Fixation and Non-Fixation Error (sFNE) loss to make proposed feedback model better learn distinguishable eye-fixation-based features. Extensive experimental results show that our SalFBNet with fewer parameters achieves competitive results on the public saliency detection benchmarks, which demonstrate the effectiveness of proposed feedback model and Pseudo-Saliency data. Source codes and Pseudo-Saliency dataset can be found at https://github.com/gqding/SalFBNet.},
 }
 
 @article{2022_IMAVIS_MMSNet,
@@ -60,7 +74,11 @@
 	keywords={selected},
 	year={2022},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={mmsnet-2022.png},
+	html={https://doi.org/10.1016/j.imavis.2022.104453},
+	code={https://github.com/acaglayan/MMSNet},
+	abstract={Utilizing multi-level features has been proven to improve RGB-D scene recognition performance. However, simply fusing features after conducting RGB and depth data separately may not satisfy multi-modal integrity. In this work, we propose an effective multi-modal RGB-D scene recognition model that integrates global or local multi-scale/multi-semantic features. The proposed approach is built on two key components. In the first stage, multiple random recursive neural networks (RNNs) are employed on a baseline CNN model to obtain multi-scale encoded features from multi-level feature hierarchy. In the second stage, multi-layer perceptrons (MLPs) learn global/local features at multiple levels while encouraging the correlation of multi-modal mutual features. Our learning design is based on the insight that correlated multi-modal features provide the complementary relation between the two modalities that promotes better performance of RGB-D scene recognition. In addition, the network is trained using a decisive fusion based on modality prediction confidence weights to yield RGB-D multi-modal recognition. Experiments on three RGB-D scene datasets verify the effectiveness of the proposed approach by achieving superior or highly competitive results compared to other state-of-the-art counterpart methods.},
 }
 
 @article{2018_Access_Volumetric,
@@ -73,7 +91,10 @@
 	pages={20058-20066},
 	keywords={selected},
 	pubtype={journal},
-	abbr={Journal}
+	abbr={Journal},
+	preview={ieee-access-2018.png},
+	html={https://doi.org/10.1109/access.2018.2820840},
+	abstract={Recognizing 3-D objects has a wide range of application areas from autonomous robots to self-driving vehicles. The popularity of low-cost RGB-D sensors has enabled a rapid progress in 3-D object recognition in the recent years. Most of the existing studies use depth data as an additional channel to the RGB channels. Instead of this approach, we propose two volumetric representations to reveal rich 3-D structural information hidden in depth images. We present a 3-D convolutional neural network (CNN)-based object recognition approach, which utilizes these volumetric representations and single and multi-rotational depth images. The 3-D CNN architecture trained to recognize single depth images produces competitive results with the state-of-the-art methods on two publicly available datasets. However, recognition accuracy increases further when the multiple rotations of objects are brought together. Our multirotational 3-D CNN combines information from multiple views of objects to provide rotational invariance and improves the accuracy significantly comparing with the single-rotational approach. The results show that utilizing multiple views of objects can be highly informative for the 3-D CNN-based object recognition.}
 }
 
 @inproceedings{caglayan2026igarss,
@@ -84,7 +105,10 @@
 	booktitle={IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2026)},
 	pubtype={international},
 	abbr={International},
-	venue={Washington, D.C., USA}
+	venue={Washington, D.C., USA},
+	preview={igarss-2026.png},
+	arxiv={2601.15705},
+	abstract={This work focuses on national-scale land-use/land-cover (LULC) semantic segmentation using ALOS-2 single-polarization (HH) SAR data over Japan, together with a companion binary water detection task. Building on SAR-W-MixMAE self-supervised pretraining [1], we address common SAR dense-prediction failure modes, boundary over-smoothing, missed thin/slender structures, and rare-class degradation under long-tailed labels, without increasing pipeline complexity. We introduce three lightweight refinements: (i) injecting high-resolution features into multi-scale decoding, (ii) a progressive refine-up head that alternates convolutional refinement and stepwise upsampling, and (iii) an $α$-scale factor that tempers class reweighting within a focal+dice objective. The resulting model yields consistent improvements on the Japan-wide ALOS-2 LULC benchmark, particularly for under-represented classes, and improves water detection across standard evaluation metrics.}
 }
 
 @inproceedings{sugimoto2026isrs,
@@ -95,7 +119,10 @@
 	booktitle={International Symposium on Remote Sensing (ISRS 2026)},
 	pubtype={international},
 	abbr={International},
-	venue={Matsue, Japan}
+	venue={Matsue, Japan},
+	html={https://www.rssj.or.jp/isrs2026/program_April_14.html},
+	abstract={In recent years, the number of SAR satellites has rapidly increased due to advances in small satellite technologies, enabling more regular and frequent SAR-based monitoring of the Earth’s surface. As the impact and volume of SAR data continue to grow, AI-based analysis has become increasingly important, while both efficiency and accuracy remain essential considerations in AI model development. In this context, the concept of a foundation model is particularly promising. Once such a model is developed, it can be adapted to various downstream tasks using smaller datasets and reduced computational cost through additional training, i.e., finetuning. Furthermore, continual pre training may allow a foundation model originally trained on one SAR frequency band (e.g., L band) to be effectively extended to data from a different band (e.g., X band), although further experimentation is required to fully assess the feasibility of cross band continual pre training. To investigate the benefits of continual pre training for small SAR satellite data, we conducted a series of experiments that varied the training cost, i.e. the number of epochs in the continual pre training phase and the dataset size used during finetuning. We first built an original foundation model using ALOS 2/PALSAR 2 (L band) data, and then continued pre training it with small satellite SAR (X band) data. In the finetuning phase, we selected building segmentation as a downstream task for evaluating model performance. The results show that continual pre training clearly improves building segmentation performance compared with training a model from scratch, even when the pre training band (L band) and continual pre training band (X band) are different. We also found that models with relatively short continual pre training (e.g., 200 epochs) achieved accuracy comparable to models trained for much longer durations (400, 600, and 800 epochs), indicating the potential for reducing computational cost for utilizing AI model through continual pre training. },
+	preview={isrs-2026.png}
 }
 
 @inproceedings{caglayan2025igarss,
@@ -108,7 +135,11 @@
 	publisher = {IEEE},
 	pubtype={international},
 	abbr={International},
-	venue={Brisbane, Australia}
+	venue={Brisbane, Australia},
+	preview={igarss-2025.png},
+	html={https://doi.org/10.1109/igarss55030.2025.11242542},
+	code={https://github.com/acaglayan/SAR-W-MixMAE},
+	abstract={Foundation model approaches such as masked autoencoders (MAE) or its variations are now being successfully applied to satellite imagery. Most of the ongoing technical validation of foundation models have been applied to optical images like RGB or multi-spectral images. Due to difficulty in semantic labeling to create datasets and higher noise-like content (speckle) with respect to optical images, Synthetic Aperture Radar (SAR) data has not been explored a lot in the field for foundation models. Therefore, in this work as a pre-training approach, we explored masked auto-encoder, specifically MixMAE [1] on Sentinel-1 SAR images and its impact on SAR image classification tasks. Moreover, we proposed to use the physical characteristic of SAR data for applying weighting parameter on the auto-encoder training loss (MSE) to reduce the effect of speckle and very high values on the SAR images. Proposed SAR intensity-based weighting of the reconstruction loss demonstrates promising results both on SAR pre-training and downstream tasks specifically on flood detection compared with the baseline model.}
 }
 
 @inproceedings{sar_class_imbalance,
@@ -121,6 +152,9 @@
 	abbr={International},
 	venue={Matsue, Japan},
 	eventdate={October 5-9},
+	preview={apsar-2025.png},
+	html={https://doi.org/10.23919/apsar64635.2025.11392271},
+	abstract={Semantic segmentation in SAR imagery is challenging due to extreme class imbalance, where dominant land cover types such as forests and water bodies dominate rare classes. This imbalance reduces segmentation performance, particularly for underrepresented categories. This study explores various strategies to mitigate class imbalance in SAR-based segmentation using a SAR foundation model. The results show that weighted cross-entropy (CE) and combined focal-dice loss improve mean accuracy (mAcc) and mean intersection over union (mIoU), particularly for rare classes. However, while data augmentation and priority sampling increase the presence of rare classes during training, they do not provide significant improvement, showing the effectiveness of loss-based optimization.},
 }
 
 @inproceedings{2022_BMVC_Ding,
@@ -133,6 +167,10 @@
 	abbr={International},
 	venue={London, UK},
 	eventdate={November 21-24},
+	preview={bmvc-2022.png},
+	html={https://pdf-files.bmvc2022.org/0584.pdf},
+	code={https://github.com/nevrez/SalLONet},
+	abstract={Saliency prediction has achieved significant progress in color images owing to deep neural networks trained on annotated human eye-fixation data or ground truth saliency maps. Unlike in image/video domain, only a few works have addressed saliency information to further guide 3D point cloud understanding due to the lack of annotated training data. Moreover, it is certainly difficult and not feasible for subjects to annotate eye-fixation or density saliency map groundtruth for point clouds due to the irregular, unordered, and sparse characteristics of 3D point cloud data. To alleviate this issue, we present a universal framework to transfer saliency distribution knowledge from color images to point clouds. We first apply pre-trained RGB saliency models to predict saliency maps for images. We then assign saliency value of each point on 3D point cloud registered to respective 2D multi-view color images by using the RGB saliency prediction. Based on that, we construct a pseudo-saliency dataset (i.e. FordSaliency) that presents 2D to 3D transferred saliency information for point clouds. Furthermore, we adopt existing point cloud-based models to learn saliency distribution from pseudo-saliency labels. Experimental results on our FordSaliency dataset verify that the point cloud-based models can learn saliency distributions from point cloud pseudo-labels. Finally, we demonstrate an application of point cloud saliency predictions on 3D semantic segmentation. Specifically, we propose an attention guided learning model by combining learned saliency knowledge and semantic features for large-scale point cloud segmentation. Extensive experiments of the proposed attention guided learning model on SemanticKITTI [1] dataset show that the learned saliency knowledge effectively improves the performance of the 3D semantic segmentation task.}
 }
 
 @inproceedings{2021_MLSP_Dinq,
@@ -146,6 +184,9 @@
 	abbr={International},
 	venue={Virtual Conference},
 	eventdate={September 20-23},
+	preview={mlsp-2021.png},
+	html={https://doi.org/10.1109/mlsp52302.2021.9596383},
+	abstract={Different from the saliency detection on static images, the context and dynamic information from video sequences play an important role in saliency prediction on dynamic scenes. In this work, we propose a novel feedback recurrent network (FBR-CNN) to simultaneously learn the abundant contextual and dynamic features for video saliency detection. In order to learn the dynamic relationship from video frames, we incorporate the recurrent convolutional layers into the standard feed-forward CNN model. With multiple video frames as inputs, the long-term dependence and contextual relevance over time could be strengthen due to the powerful recurrent units. Unlike the feed-forward only CNN models, we propose to feed back the learned CNN features from high-level feedback recurrent blocks (FBR-block) to low-level layers to further enhance the the contextual representations. Experiments on the public video saliency benchmarks demonstrate that the model with feedback connections and recurrent units can dramatically improve the performance of the baseline feedforward structure. Moreover, although the proposed model has few parameters (~6.5 MB), it achieves comparable performance against the existing video saliency approaches.}
 }
 
 @inproceedings{2021_MVA_Dinq,
@@ -159,6 +200,9 @@
 	abbr={International},
 	venue={Fully online, Japan},
 	eventdate={July 25-27},
+	preview={mva-2021.png},
+	html={https://doi.org/10.23919/mva51890.2021.9511371},
+	abstract={Saliency detection research has achieved great progress with the emergence of convolutional neural network (CNN) in recent years. Most deep learning based saliency models mainly adopt the feed-forward CNN architecture with heavy burden of parameters to learn features via bottom-up manner. However, this forward only process may ignore the intrinsic relationship and potential benefits of top-down connections or information flow. To the best of our knowledge, there is not any work to explore the feedback connection especially in a recursive manner for saliency detection. Therefore, we propose and explore a simple, intuitive yet powerful feedback recursive convolutional model (FBNet) for image saliency detection. Specifically, we first select and define a lightweight baseline feed-forward CNN structure (~4.7MB), then the high-level multi-scale saliency features are fed back to the low-level convolutional blocks in a recursive process. Experimental results show that the feedback recursive process is a promising way to improve the performance of the baseline forward CNN model. Besides, despite having relatively few CNN parameters, the proposed FBNet model achieves competitive results on the public saliency detection benchmarks.}
 }
 
 @inproceedings{2018_ECCVW_CNNRNN,
@@ -176,6 +220,10 @@
 	abbr={International},
 	venue={Munich, Germany},
 	eventdate={September 8-14},
+	preview={eccvw-2018.png},
+	html={https://doi.org/10.1007/978-3-030-11015-4_51},
+	code={https://github.com/acaglayan/exploitCNN-RNN},
+	abstract={This paper proposes an approach for RGB-D object recognition by integrating a CNN model with recursive neural networks. It first employs a pre-trained CNN model as the underlying feature extractor to get visual features at different layers for RGB and depth modalities. Then, a deep recursive model is applied to map these features into high-level representations. Finally, multi-level information is fused to produce a strong global representation of the entire object image. In order to utilize the CNN model trained on large-scale RGB datasets for the depth domain, depth images are converted to a representation similar to RGB images. Experimental results on the Washington RGB-D Object dataset show that the proposed approach outperforms previous approaches.},
 }
 
 @inproceedings{2019_CVPRW_Guclu,
@@ -189,6 +237,9 @@
 	abbr={International},
 	venue={Long Beach, CA, USA},
 	eventdate={June 16-20},
+	preview={cvprw-2019.png},
+	html={https://doi.org/10.1109/cvprw.2019.00164},
+	abstract={RGB-D indoor mapping has been an active research topic in the last decade with the advance of depth sensors. However, despite the great success of deep learning techniques on various problems, similar approaches for SLAM have not been much addressed yet. In this work, an RGB-D SLAM system using a deep learning approach for mapping indoor environments is proposed. A pre-trained CNN model with multiple random recursive structures is utilized to acquire deep features in an efficient way with no need for training. Deep features present strong representations from color frames and enable better data association. To increase computational efficiency, deep feature vectors are considered as points in a high dimensional space and indexed in a priority search k-means tree. The search precision is improved by employing an adaptive mechanism. For motion estimation, a sparse feature based approach is adopted by employing a robust keypoint detector and descriptor combination. The system is assessed on TUM RGB-D benchmark using the sequences recorded in medium and large sized environments. The experimental results demonstrate the accuracy and robustness of the proposed system over the state-of-the-art, especially in large sequences.}
 }
 
 @inproceedings{2017_ICIAR_Empiric,
@@ -205,6 +256,9 @@
 	abbr={International},
 	venue={Montreal, QC, Canada},
 	eventdate={July 5-7},
+	preview={iciar-2017.png},
+	html={https://doi.org/10.1007/978-3-319-59876-5_35},
+	abstract={Conventional deep feature learning methods use the same model parameters for both RGB and depth domains in RGB-D object recognition. Since the characteristics of RGB and depth data are different, the suitability of such approaches is suspicious. In this paper, we empirically investigate the effects of different model parameters on RGB and depth domains using the Washington RGB-D Object Dataset. We have explored the effects of different filter learning approaches, rectifier functions, pooling methods, and classifiers for RGB and depth data separately. We have found that individual model parameters fit best for RGB and depth data.},
 }
 
 @inproceedings{2017_MVA_Volumetric,
@@ -218,6 +272,9 @@
 	abbr={International},
 	venue={Nagoya, Japan},
 	eventdate={May 8-12},
+	preview={mva-2017.png},
+	html={https://doi.org/10.23919/mva.2017.7986817},
+	abstract={Hand-crafted features are widely used in object recognition field. Recent advances in convolutional neural networks allow to extract features automatically and produce better results in object recognition without considering about feature design. Although RGB and depth data are used in some convolutional network based approaches, volumetric information hidden in depth data is not fully utilized. We present a 3D convolutional neural network based approach to utilize volumetric information extracted from depth data. Using a single depth image, a view-based incomplete 3D model is constructed. Although this method does not provide enough information to build a complete 3D model, it is still useful to recognize objects. To the best of our knowledge, the proposed approach is the first volumetric study on the Washington RGB-D Object Dataset and achieves results as competitive as the state-of-the-art works.}
 }
 
 @inproceedings{2013_ICIAP_Plant,
@@ -235,6 +292,9 @@
 	abbr={International},
 	venue={Naples, Italy},
 	eventdate={September 9-13},
+	preview={iciap-2013.png},
+	html={https://doi.org/10.1007/978-3-642-41184-7_17},
+	abstract={Recognizing plants is a vital problem especially for biologists, chemists, and environmentalists. Plant recognition can be performed by human experts manually but it is a time consuming and low-efficiency process. Automation of plant recognition is an important process for the fields working with plants. This paper presents an approach for plant recognition using leaf images. Shape and color features extracted from leaf images are used with k-Nearest Neighbor, Support Vector Machines, Naive Bayes, and Random Forest classification algorithms to recognize plant types. The presented approach is tested on 1897 leaf images and 32 kinds of leaves. The results demonstrated that success rate of plant recognition can be improved up to 96% with Random Forest method when both shape and color features are used.},
 }
 
 @inproceedings{imamoglu2025rssj_sar_pretraining_segmentation,
@@ -246,8 +306,25 @@
 	abbr={National},
 	venue={AIST, Ibaraki, Japan},
 	eventdate={June 4-5},
+	preview={rssj-spring-2025.png},
+	html={https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202502224148141108},
+	abstract={Pretraining and fine-tuning models on satellite imagery present unique challenges, particularly when the goal is to build region-specific models. Imbalanced land cover distributions, such as dominant water, forest, or desert areas, can introduce bias, affecting both pretraining and downstream tasks like land cover segmentation. In this work, we construct a SAR dataset using ALOS2 single-channel (HH polarization) imagery focused on the Japan region, as a first step toward developing a national-scale foundation model. This dataset is used to pretrain a vision transformer-based autoencoder, and the resulting encoder is fine-tuned for semantic segmentation using a task-specific decoder. Our initial results show a substantial performance gain compared to training from scratch with random initialization.}
 }
 
+
+@inproceedings{kouyama2024rssj_sar_foundation_models,
+	author={Kouyama, Toru and Imamoglu, Nevrez and Caglayan, Ali and Tomi, N. and Oda, A. and Tsutsumi, Chiaki},
+	title={産総研におけるSAR画像を用いた基盤モデル構築の取り組み / Toward development of foundation model based on SAR imagery in AIST},
+	booktitle={Remote Sensing Society of Japan (RSSJ), 77th Autumn Conference},
+	year={2024},
+	pubtype={national},
+	abbr={National},
+	venue={Yamaguchi, Japan},
+	eventdate={November 26-27},
+	preview={rssj-autumn-2024.png},
+	html={https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202502228075281066},
+	abstract={大量事前学習によって構築された基盤モデルは、個別の課題に対して学習コストを抑えつつ高精度な結果が得られることが確認されている。この技術は衛星画像にも取り込まれその技術検証が進んでいる。産業技術総合研究所では天候によらず地表の情報が得られるSAR画像とこの基盤モデルの組み合わせに着目し、例えば災害後迅速に広域の被災状況の把握に役立つフレームワークの構築を目指している。本発表ではその準備として行ったMixMAEによる事前学習事例の紹介と目指すシステムの概要について議論する。}
+}
 @inproceedings{caglayan2024miru_attention_guided_odometry,
 	author={Caglayan, Ali and Imamoglu, Nevrez and Guclu, Oguzhan and Serhatoglu, A. O. and Can, Ahmet Burak},
 	title={Attention Guided Odometry: Enhancing RGB-D SLAM with Task-Specific Network Attention},
@@ -257,17 +334,9 @@
 	abbr={National},
 	venue={Kumamoto, Japan},
 	eventdate={August 6-9},
-}
-
-@inproceedings{kouyama2024rssj_sar_foundation_models,
-	author={Kouyama, Toru and Imamoglu, Nevrez and Caglayan, Ali and Tomi, N. and Oda, A. and Tsutsumi, Chiaki},
-	title={産総研におけるSAR画像を用いた基盤モデル構築の取り組み / Efforts toward building foundation models using SAR imagery at AIST},
-	booktitle={Remote Sensing Society of Japan (RSSJ), 77th Autumn Conference},
-	year={2024},
-	pubtype={national},
-	abbr={National},
-	venue={Yamaguchi, Japan},
-	eventdate={November 26-27},
+	preview={miru-2024.png},
+	html={https://miru-committee.github.io/miru2024/program/timetable/},
+	abstract={Attention models as an emerging topic have shown great progress in various fields. Especially, visualization tools such as class activation mapping methods provided visual explanation on the reasoning of convolutional neural networks (CNNs). By using the gradients of the network layers, it is possible to demonstrate where the networks pay attention during a specific image recognition task. Moreover, these gradients can be integrated with CNN features for localizing more generalized task dependent attentive (salient) objects in scenes. Despite this progress, there is not much explicit usage of this gradient (network attention) information to integrate with CNN representations for object semantics. This can be very useful for visual tasks such as simultaneous localization and mapping (SLAM) where CNN representations of spatially attentive object locations may lead to improved performance. Therefore, in this work, we explore the use of task specific network attention for RGB-D indoor odometry task. We propose attention guided odometry on both a conventional RGB-D SLAM framework and a deep learning based self-supervised odometry model.},
 }
 
 @inproceedings{wu2021miru_pointcloud_upsampling,
@@ -277,8 +346,10 @@
 	year={2021},
 	pubtype={national},
 	abbr={National},
-	venue={Fully online, Japan},
 	eventdate={July 27-30},
+	preview={miru-2021.png},
+	html={https://cvim.ipsj.or.jp/MIRU2021/program/},
+	abstract={Higher density of point cloud generally brings better surface reconstruction performance, hence it benefits downstream applications such as CG and VR. In this paper, we introduce a novel fully self-supervised approach named PD2R-Net* for point cloud upsampling. Our approach combines two key insights. First, we duplicate points to a desired number and use them as the bases of regression. Secondly, we regress the displacement for each point to scatter them under the constraints of three designed losses. Only inherent geometric priori is applied as self-supervised guidance during the whole process. Besides, points duplication brings good starting point for optimization, and displacement regression yields stability as well as fast convergence for the optimization. Owing to this self-supervised design, our method is capable of both handling any size of the input point cloud and generating one with any size, i.e. arbitrary input number and upsampling rate. Extensive experiments demonstrate the advantages and effectiveness of the proposed method both qualitatively and quantitatively. The results confirm the superiority of our method over state-of-the-arts (SotA) supervised methods in terms of distribution uniformity.}
 }
 
 @article{imamoglu2026alos2_sar_tutorial,
@@ -288,7 +359,9 @@
 	year={2026},
 	arxiv={2603.15119},
 	pubtype={preprint},
-	abbr={Preprint}
+	abbr={Preprint},
+	preview={alos2-tutorial-2026.png},
+	abstract={Masked auto-encoders (MAE) and related approaches have shown promise for satellite imagery, but their application to synthetic aperture radar (SAR) remains limited due to challenges in semantic labeling and high noise levels. Building on our prior work with SAR-W-MixMAE, which adds SAR-specific intensity-weighted loss to standard MixMAE for pretraining, we also introduce SAR-W-SimMIM; a weighted variant of SimMIM applied to ALOS-2 single-channel SAR imagery. This method aims to reduce the impact of speckle and extreme intensity values during self-supervised pretraining. We evaluate its effect on semantic segmentation compared to our previous trial with SAR-W-MixMAE and random initialization, observing notable improvements. In addition, pretraining and fine-tuning models on satellite imagery pose unique challenges, particularly when developing region-specific models. Imbalanced land cover distributions such as dominant water, forest, or desert areas can introduce bias, affecting both pretraining and downstream tasks like land cover segmentation. To address this, we constructed a SAR dataset using ALOS-2 single-channel (HH polarization) imagery focused on the Japan region, marking the initial phase toward a national-scale foundation model. This dataset was used to pretrain a vision transformer-based autoencoder, with the resulting encoder fine-tuned for semantic segmentation using a task-specific decoder. Initial results demonstrate significant performance improvements compared to training from scratch with random initialization. In summary, this work provides a guide to process and prepare ALOS2 observations to create dataset so that it can be taken advantage of self-supervised pretraining of models and finetuning downstream tasks such as semantic segmentation.}
 }
 
 @article{caglayan2025object_aware_attention_slam,
@@ -298,7 +371,9 @@
 	year={2025},
 	arxiv={2510.26131},
 	pubtype={preprint},
-	abbr={Preprint}
+	abbr={Preprint},
+	preview={rgbd-slam-2025.png},
+	abstract={Attention models have recently emerged as a powerful approach, demonstrating significant progress in various fields. Visualization techniques, such as class activation mapping, provide visual insights into the reasoning of convolutional neural networks (CNNs). Using network gradients, it is possible to identify regions where the network pays attention during image recognition tasks. Furthermore, these gradients can be combined with CNN features to localize more generalizable, task-specific attentive (salient) regions within scenes. However, explicit use of this gradient-based attention information integrated directly into CNN representations for semantic object understanding remains limited. Such integration is particularly beneficial for visual tasks like simultaneous localization and mapping (SLAM), where CNN representations enriched with spatially attentive object locations can enhance performance. In this work, we propose utilizing task-specific network attention for RGB-D indoor SLAM. Specifically, we integrate layer-wise attention information derived from network gradients with CNN feature representations to improve frame association performance. Experimental results indicate improved performance compared to baseline methods, particularly for large environments. }
 }
 
 @misc{imamoglu2025aist_sar_foundation_press,
@@ -310,5 +385,7 @@
 	jp={https://www.aist.go.jp/aist_j/press_release/pr2025/pr20250603/pr20250603.html},
 	en={https://www.aist.go.jp/aist_e/list/latest_research/2025/20251001/en20251001.html},
 	pubtype={press},
-	abbr={Press}
+	abbr={Press},
+	preview={aist-press-2025.png},
+	abstract={Researchers at AIST, in collaboration with JAXA, have developed a national land-specific Synthetic Aperture Radar (SAR) foundation model using high-resolution observation SAR data routinely acquired over Japan by the SAR instrument, PALSAR-2, onboard the "DAICHI-2" (ALOS-2). The PALSAR-2 observation data covers the entire country, and by extracting image patches centered on selected locations, a training dataset reflecting diverse land use and land cover types was constructed. Using this dataset, we performed large-scale self-supervised learning to build a SAR foundation model specialized for Japan’s land area. The results from transfer learning for land use/land cover estimation showed significantly higher accuracy compared to models trained from scratch, demonstrating the effectiveness of the foundation model trained on a more balanced dataset. Although the foundation model is initially developed by researchers at AIST and JAXA, it is expected to broaden the use of SAR by utilizing the foundation model that can reduce both the cost of model development and the barrier to interpreting SAR images, which typically requires specialized expertise.}
 }

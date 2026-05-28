@@ -632,6 +632,11 @@ footer.sticky-bottom {
         width: 100%;
         min-width: 80px;
         max-width: 200px;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        object-position: center;
+        background: var(--global-bg-color);
+        border-radius: 6px;
       }
       .abbr {
         height: 2rem;
