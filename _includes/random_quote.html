@@ -1,29 +1,54 @@
 {%- assign quotes = site.data.quotes -%}
 {%- if quotes and quotes.size > 0 -%}
+{%- assign fallback_quote = quotes.first -%}
 <div class="about-random-quote" data-random-quote>
-  {%- for item in quotes -%}
-    <figure class="about-quote{% if forloop.first %} is-visible{% endif %}" data-quote>
-      <blockquote>{{ item.quote }}</blockquote>
-      {%- if item.author -%}
-        <figcaption>
-          - {{ item.author }}{%- if item.source -%}, <cite>{{ item.source }}</cite>{%- endif -%}
-        </figcaption>
-      {%- endif -%}
-    </figure>
-  {%- endfor -%}
+  <figure class="about-quote">
+    <blockquote data-random-quote-text>{{ fallback_quote.quote }}</blockquote>
+    {%- if fallback_quote.author -%}
+      <figcaption data-random-quote-caption>
+        - {{ fallback_quote.author }}{%- if fallback_quote.source -%}, <cite>{{ fallback_quote.source }}</cite>{%- endif -%}
+      </figcaption>
+    {%- else -%}
+      <figcaption data-random-quote-caption hidden></figcaption>
+    {%- endif -%}
+  </figure>
+  <script type="application/json" data-random-quote-data>{{ quotes | jsonify }}</script>
 </div>
 <script>
   (function () {
     var container = document.querySelector('[data-random-quote]');
     if (!container) return;
 
-    var quotes = container.querySelectorAll('[data-quote]');
-    if (!quotes.length) return;
+    var dataNode = container.querySelector('[data-random-quote-data]');
+    var quoteNode = container.querySelector('[data-random-quote-text]');
+    var captionNode = container.querySelector('[data-random-quote-caption]');
+    if (!dataNode || !quoteNode || !captionNode) return;
 
-    var index = Math.floor(Math.random() * quotes.length);
-    quotes.forEach(function (quote, quoteIndex) {
-      quote.classList.toggle('is-visible', quoteIndex === index);
-    });
+    var quotes;
+    try {
+      quotes = JSON.parse(dataNode.textContent);
+    } catch (error) {
+      return;
+    }
+    if (!quotes || !quotes.length) return;
+
+    var item = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteNode.textContent = item.quote || '';
+
+    if (!item.author) {
+      captionNode.hidden = true;
+      captionNode.textContent = '';
+      return;
+    }
+
+    captionNode.hidden = false;
+    captionNode.textContent = '- ' + item.author;
+    if (item.source) {
+      captionNode.appendChild(document.createTextNode(', '));
+      var cite = document.createElement('cite');
+      cite.textContent = item.source;
+      captionNode.appendChild(cite);
+    }
   })();
 </script>
 {%- endif -%}

@@ -135,12 +135,7 @@ blockquote {
   margin-bottom: 1rem;
 
   .about-quote {
-    display: none;
     margin: 0;
-
-    &.is-visible {
-      display: block;
-    }
   }
 
   blockquote {
