@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Ali
 middle_name: 
 last_name: Caglayan
-email: a.caglayan12@gmail.com
+email: ali.caglayan@aist.go.jp
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Academic website of Ali Caglayan, senior researcher at AIST working on computer vision, 2D/3D scene understanding, visual SLAM, and remote sensing.
 footer_text: >
